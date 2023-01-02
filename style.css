@@ -90,6 +90,7 @@ li {
     text-align: center;
     border: none;
     color: #7342d6;
+    display: none;
 }
 
 .menu__backdrop {
@@ -102,9 +103,17 @@ li {
     width: 100vw;
     height: 100vh;
     z-index:100;
-    display: flex;
+   /* display: flex; */
     justify-content: center;
     align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop {
+    visibility: visible;
+    opacity: 1;
 }
 
 .menu__links {
@@ -388,4 +397,14 @@ color: #fff;
 .footer__link {
     padding: 0 8px;
 
+}
+
+@media (max-width: 550px) {
+    .nav__links{
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
 }
